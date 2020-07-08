@@ -11,7 +11,7 @@
   <form style="margin-top: 20px">
     <label>
       經度
-      <input type="number" id="lat" value="23.22219022985">
+      <input type="number" id="lat" value="24.9880455">
     </label>
     <label>
       緯度
@@ -19,9 +19,10 @@
     </label>
     <input type="submit" value="送出">
   </form>
-  <textarea></textarea>
+  <textarea style="width: 100%; height: 300px;"></textarea>
   <script>
-    document.querySelector('form').addEventListener('submit', () => {
+    document.querySelector('form').addEventListener('submit', (e) => {
+      e.preventDefault()
       const lng = Number(document.querySelector('#lng').value)
       const lat = Number(document.querySelector('#lat').value)
 
