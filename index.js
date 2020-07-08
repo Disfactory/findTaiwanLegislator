@@ -15,7 +15,7 @@ function responseError (ctx, code, message) {
 }
 
 app.use(async (ctx, next) => {
-  if (ctx.URL.pathname !== 'list' || ctx.method !== 'POST') {
+  if (ctx.URL.pathname !== '/list' || ctx.method !== 'POST') {
     await next()
     return
   }
@@ -27,7 +27,7 @@ app.use(async (ctx, next) => {
   }
 
   ctx.type = 'json'
-  ctx.body = JSON.stringify(await Promise.all(body.map((el) => getLegislators(el.lng, el.lat))))
+  ctx.body = JSON.stringify(await Promise.all(body.map((el) => getLegislators(el.lng, el.lat).catch((e) => ({ message: e.message })))))
 })
 
 app.use(async (ctx, next) => {
