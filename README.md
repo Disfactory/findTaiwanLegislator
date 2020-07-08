@@ -4,6 +4,9 @@
 ## Demo
 https://disfactory.github.io/findTaiwanLegislator
 
+## 座標
+EPSG:4326
+
 ## API
 BaseURL: `https://ftl.disfactory.tw`
 
