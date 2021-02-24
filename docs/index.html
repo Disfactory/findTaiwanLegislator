@@ -27,10 +27,10 @@
       const lat = Number(document.querySelector('#lat').value)
 
       fetch('https://ftl.disfactory.tw/?lng='+lng+'&lat='+lat)
-      .then((res) => res.text())
-      .then((data) => {
-        document.querySelector('textarea').value = JSON.stringify(data, null, 2)
-      })
+        .then((res) => res.text())
+        .then((data) => {
+          document.querySelector('textarea').value = JSON.stringify(data, null, 2)
+        })
     })
   </script>
 </body>
