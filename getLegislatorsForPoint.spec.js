@@ -1,5 +1,5 @@
+import { it, expect } from 'vitest'
 const { getLegislators } = require('./getLegislatorsForPoint')
-const fs = require('fs')
 
 const testData = [
   {
