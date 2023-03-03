@@ -1,11 +1,13 @@
-FROM node:12
+FROM node:16
 
 WORKDIR /usr/src/app
 
 COPY package.json ./
-COPY yarn.lock ./
+COPY pnpm-lock.yaml ./
 
-RUN yarn
+RUN corepack enable
+RUN corepack prepare pnpm@latest --activate
+RUN pnpm i
 
 COPY . .
 EXPOSE 8888
