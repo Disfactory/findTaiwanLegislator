@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "test": "vitest run",
-    "update": "yarn update:electorals && yarn update:administratives",
+    "update:data": "npm run update:electorals && npm run update:administratives",
     "update:electorals": "node scripts/fetchElectorals.js",
     "update:administratives": "node scripts/fetchAdmin.js",
     "check:data": "node scripts/checkData.js"

@@ -17,7 +17,8 @@ async function prepareData () {
 }
 
 function getAdministratives (geojson) {
-  return geojson.features.map((el) => {
+  const features = geojson.map((el) => el.features).flat()
+  return features.map((el) => {
     const getProperties = (el) => ({ county: el.properties.COUNTYNAME, town: el.properties.TOWNNAME, vill: el.properties.VILLNAME })
 
     if (el.geometry.type === 'Polygon') {
