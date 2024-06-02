@@ -21,7 +21,7 @@ jobs:
     - name: Use Node.js lts
       uses: actions/setup-node@v3
       with:
-        node-version: lts
+        node-version: lts/*
         cache: 'pnpm'
     - run: pnpm install --frozen-lockfile
     - run: pnpm run test
